@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/structure_haptic_drone
+
+Name: structure_haptic_drone
+Description: Description of structure_haptic_drone
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/emanuele/ethz_ws/devel/.private/structure_haptic_drone/lib 
+Requires: 

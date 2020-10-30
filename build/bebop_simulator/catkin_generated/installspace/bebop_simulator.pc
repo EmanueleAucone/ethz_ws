@@ -1,0 +1,8 @@
+prefix=/home/emanuele/install
+
+Name: bebop_simulator
+Description: Description of bebop_simulator
+Version: 1.0.2
+Cflags: -I/home/emanuele/install/include -I/usr/include/eigen3
+Libs: -L/home/emanuele/install/lib -lposition_controller -lextendedKalmanFilter -lposition_controller_with_bebop -lwaypoint_filter
+Requires: geometry_msgs mav_msgs nav_msgs roscpp sensor_msgs std_msgs

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/emanuele/ethz_ws/src/rotors_simulator/rotors_description/src/spring_transmission.cpp
+math.h
+-
+pr2_mechanism_model/robot.h
+/home/emanuele/ethz_ws/src/rotors_simulator/rotors_description/src/pr2_mechanism_model/robot.h
+branch_spring_transmission/spring_transmission.h
+/home/emanuele/ethz_ws/src/rotors_simulator/rotors_description/src/branch_spring_transmission/spring_transmission.h
+angles/angles.h
+-
+

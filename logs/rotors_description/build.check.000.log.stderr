@@ -1,0 +1,5 @@
+[31m[1mCMake Error[0m at /home/emanuele/ethz_ws/src/rotors_simulator/rotors_description/CMakeLists.txt:8 (rosbuild_add_library):
+  Unknown CMake command "rosbuild_add_library".
+
+
+make: *** [cmake_check_build_system] Errore 1

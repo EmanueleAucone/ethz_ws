@@ -1,0 +1,5 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_description/src/spring_transmission.cpp:38:41:[m[K [01;31m[Kfatal error: [m[Kpluginlib/class_list_macros.h: File o directory non esistente
+compilation terminated.
+make[2]: *** [CMakeFiles/spring_transmission.dir/src/spring_transmission.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/spring_transmission.dir/all] Errore 2
+make: *** [all] Errore 2

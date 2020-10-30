@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/planning_msgs/lib/pkgconfig/planning_msgs.pc

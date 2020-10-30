@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/msf_updates/lib/pkgconfig/msf_updates.pc

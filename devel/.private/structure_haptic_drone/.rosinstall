@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/emanuele/ethz_ws/devel/.private/structure_haptic_drone/setup.sh

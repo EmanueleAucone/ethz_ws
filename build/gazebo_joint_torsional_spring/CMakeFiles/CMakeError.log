@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_13217/fast"
+/usr/bin/make -f CMakeFiles/cmTC_13217.dir/build.make CMakeFiles/cmTC_13217.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_13217.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_13217.dir/CheckSymbolExists.c.o   -c /home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_13217
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13217.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_13217.dir/CheckSymbolExists.c.o  -o cmTC_13217 -rdynamic 
+CMakeFiles/cmTC_13217.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_13217.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_13217" non riuscito
+make[1]: *** [cmTC_13217] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_13217/fast" non riuscito
+make: *** [cmTC_13217/fast] Errore 2
+
+File /home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e3acb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e3acb.dir/build.make CMakeFiles/cmTC_e3acb.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_e3acb.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e3acb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e3acb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3acb.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e3acb.dir/CheckFunctionExists.c.o  -o cmTC_e3acb -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e3acb.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_e3acb" non riuscito
+make[1]: *** [cmTC_e3acb] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/gazebo_joint_torsional_spring/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_e3acb/fast" non riuscito
+make: *** [cmTC_e3acb/fast] Errore 2
+
+

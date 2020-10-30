@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/glog_catkin
+
+Name: glog_catkin
+Description: Description of glog_catkin
+Version: 0.3.5
+Cflags: -I/home/emanuele/ethz_ws/devel/.private/glog_catkin/include
+Libs: -L/home/emanuele/ethz_ws/devel/.private/glog_catkin/lib -lglog
+Requires: 

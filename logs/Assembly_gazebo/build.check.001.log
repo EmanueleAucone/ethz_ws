@@ -1,0 +1,4 @@
+CMake Error: The source directory "/home/emanuele/ethz_ws/src/Assembly_gazebo" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.
+Makefile:332: set di istruzioni per l'obiettivo "cmake_check_build_system" non riuscito
+make: *** [cmake_check_build_system] Errore 1

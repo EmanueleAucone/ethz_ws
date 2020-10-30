@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/rotors_simulator_demos/share/rotors_simulator_demos/cmake/rotors_simulator_demosConfig.cmake

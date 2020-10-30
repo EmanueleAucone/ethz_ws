@@ -1,0 +1,6 @@
+[01m[K/home/emanuele/ethz_ws/src/gazebo_joint_torsional_spring/src/gazebo_joint_torsional_spring.cpp:61:4:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K--[m[K’ token
+   }----ghj
+[01;32m[K    ^[m[K
+make[2]: *** [CMakeFiles/gazebo_joint_torsional_spring.dir/src/gazebo_joint_torsional_spring.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/gazebo_joint_torsional_spring.dir/all] Errore 2
+make: *** [all] Errore 2

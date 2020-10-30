@@ -1,0 +1,24 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvirtual void gazebo::rendering::GazeboVisualPlugin::Load(gazebo::rendering::VisualPtr, sdf::ElementPtr)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:47:24:[m[K [01;31m[Kerror: [m[K‘[01m[KSomeVisualPlugin[m[K’ has not been declared
+           boost::bind(&SomeVisualPlugin::UpdateChild, this));
+[01;32m[K                        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::GazeboVisualPlugin::VisualizeForceOnLink(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:91:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+         );
+[01;32m[K         ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:92:77:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+       this->line->AddPoint(math::Vector3(endpoint.x, endpoint.y, endpoint.z));
+[01;32m[K                                                                             ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+make[2]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/all] Errore 2
+make: *** [all] Errore 2

@@ -1,0 +1,6 @@
+devel_space: /home/emanuele/ethz_ws/devel/
+install: false
+install_space: /home/emanuele/install
+profile: default
+source_space: /home/emanuele/ethz_ws/src/
+workspace: /home/emanuele

@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/Assembly_gazebo
+
+Name: Assembly_gazebo
+Description: Description of Assembly_gazebo
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/emanuele/ethz_ws/devel/.private/Assembly_gazebo/lib 
+Requires: 

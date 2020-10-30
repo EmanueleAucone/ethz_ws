@@ -1,0 +1,35 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In constructor ‘[01m[Kgazebo::rendering::SomeVisualPlugin::SomeVisualPlugin()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:12:5:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+     {
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::SomeVisualPlugin::CurrentLinkPose(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:59:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const geometry_msgs::PointStamped_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kpoint[m[K’
+  link_pose = point_msg.point;
+[01;32m[K                        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::SomeVisualPlugin::VisualizeForceOnLink(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:76:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kgazebo::rendering::SomeVisualPlugin::CalculateEndpointOfForceVector(geometry_msgs::Point&, const ConstPtr&)[m[K’
+       endpoint = CalculateEndpointOfForceVector(link_pose, force_msg);
+[01;32m[K                                                                     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:62:26:[m[K [01;36m[Knote: [m[Kcandidate: geometry_msgs::Point gazebo::rendering::SomeVisualPlugin::CalculateEndpointOfForceVector(geometry_msgs::Point, geometry_msgs::WrenchStamped)
+     geometry_msgs::Point SomeVisualPlugin::CalculateEndpointOfForceVector(geometry_msgs::Point link_pose, geometry_msgs::WrenchStamped force_msg)
+[01;32m[K                          ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:62:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kconst ConstPtr {aka const boost::shared_ptr<const geometry_msgs::WrenchStamped_<std::allocator<void> > >}[m[K’ to ‘[01m[Kgeometry_msgs::WrenchStamped {aka geometry_msgs::WrenchStamped_<std::allocator<void> >}[m[K’
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:85:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+         );
+[01;32m[K         ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:86:77:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+       this->line->AddPoint(math::Vector3(endpoint.x, endpoint.y, endpoint.z));
+[01;32m[K                                                                             ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+make[2]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/all] Errore 2
+make: *** [all] Errore 2

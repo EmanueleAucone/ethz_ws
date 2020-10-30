@@ -1,0 +1,11 @@
+Symlinking /home/emanuele/ethz_ws/devel/lib/pkgconfig/msf_distort.pc
+Symlinking /home/emanuele/ethz_ws/devel/lib/python2.7/dist-packages/msf_distort/__init__.py
+Symlinking /home/emanuele/ethz_ws/devel/lib/python2.7/dist-packages/msf_distort/cfg/__init__.py
+Symlinking /home/emanuele/ethz_ws/devel/lib/python2.7/dist-packages/msf_distort/cfg/MSF_DistortConfig.py
+Symlinking /home/emanuele/ethz_ws/devel/lib/msf_distort/msf_distort
+Symlinking /home/emanuele/ethz_ws/devel/share/msf_distort/cmake/msf_distortConfig.cmake
+Symlinking /home/emanuele/ethz_ws/devel/share/msf_distort/cmake/msf_distortConfig-version.cmake
+Symlinking /home/emanuele/ethz_ws/devel/share/msf_distort/docs/MSF_DistortConfig.wikidoc
+Symlinking /home/emanuele/ethz_ws/devel/share/msf_distort/docs/MSF_DistortConfig.dox
+Symlinking /home/emanuele/ethz_ws/devel/share/msf_distort/docs/MSF_DistortConfig-usage.dox
+Symlinking /home/emanuele/ethz_ws/devel/include/msf_distort/MSF_DistortConfig.h

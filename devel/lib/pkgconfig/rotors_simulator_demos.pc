@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/rotors_simulator_demos/lib/pkgconfig/rotors_simulator_demos.pc

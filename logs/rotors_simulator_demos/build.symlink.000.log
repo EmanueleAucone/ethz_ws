@@ -1,0 +1,4 @@
+Symlinking /home/emanuele/ethz_ws/devel/lib/pkgconfig/rotors_simulator_demos.pc
+Symlinking /home/emanuele/ethz_ws/devel/lib/rotors_simulator_demos/hovering_example_msf
+Symlinking /home/emanuele/ethz_ws/devel/share/rotors_simulator_demos/cmake/rotors_simulator_demosConfig.cmake
+Symlinking /home/emanuele/ethz_ws/devel/share/rotors_simulator_demos/cmake/rotors_simulator_demosConfig-version.cmake

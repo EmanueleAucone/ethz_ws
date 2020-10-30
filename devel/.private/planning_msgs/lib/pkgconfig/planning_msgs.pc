@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/planning_msgs
+
+Name: planning_msgs
+Description: Description of planning_msgs
+Version: 3.1.2
+Cflags: -I/home/emanuele/ethz_ws/devel/.private/planning_msgs/include -I/home/emanuele/ethz_ws/src/mav_comm/planning_msgs/include -I/usr/include/eigen3
+Libs: -L/home/emanuele/ethz_ws/devel/.private/planning_msgs/lib 
+Requires: message_runtime geometry_msgs sensor_msgs mav_msgs trajectory_msgs

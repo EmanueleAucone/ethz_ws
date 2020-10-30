@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f6aca/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f6aca.dir/build.make CMakeFiles/cmTC_f6aca.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_f6aca.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_f6aca.dir/CheckSymbolExists.c.o   -c /home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f6aca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6aca.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_f6aca.dir/CheckSymbolExists.c.o  -o cmTC_f6aca -rdynamic 
+CMakeFiles/cmTC_f6aca.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f6aca.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_f6aca" non riuscito
+make[1]: *** [cmTC_f6aca] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_f6aca/fast" non riuscito
+make: *** [cmTC_f6aca/fast] Errore 2
+
+File /home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b352c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b352c.dir/build.make CMakeFiles/cmTC_b352c.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_b352c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b352c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b352c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b352c.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_b352c.dir/CheckFunctionExists.c.o  -o cmTC_b352c -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b352c.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_b352c" non riuscito
+make[1]: *** [cmTC_b352c] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/rotors_evaluation/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_b352c/fast" non riuscito
+make: *** [cmTC_b352c/fast] Errore 2
+
+

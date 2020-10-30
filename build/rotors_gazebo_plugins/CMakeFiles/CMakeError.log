@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7efdc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7efdc.dir/build.make CMakeFiles/cmTC_7efdc.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_7efdc.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_7efdc.dir/CheckSymbolExists.c.o   -c /home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7efdc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7efdc.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_7efdc.dir/CheckSymbolExists.c.o  -o cmTC_7efdc -rdynamic 
+CMakeFiles/cmTC_7efdc.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7efdc.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_7efdc" non riuscito
+make[1]: *** [cmTC_7efdc] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_7efdc/fast" non riuscito
+make: *** [cmTC_7efdc/fast] Errore 2
+
+File /home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_68abf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_68abf.dir/build.make CMakeFiles/cmTC_68abf.dir/build
+make[1]: ingresso nella directory "/home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_68abf.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_68abf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_68abf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68abf.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_68abf.dir/CheckFunctionExists.c.o  -o cmTC_68abf -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_68abf.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_68abf" non riuscito
+make[1]: *** [cmTC_68abf] Errore 1
+make[1]: uscita dalla directory "/home/emanuele/ethz_ws/build/rotors_gazebo_plugins/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_68abf/fast" non riuscito
+make: *** [cmTC_68abf/fast] Errore 2
+
+

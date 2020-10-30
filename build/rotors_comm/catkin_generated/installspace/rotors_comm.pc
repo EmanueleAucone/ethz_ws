@@ -1,0 +1,8 @@
+prefix=/home/emanuele/install
+
+Name: rotors_comm
+Description: Description of rotors_comm
+Version: 2.0.1
+Cflags: -I/home/emanuele/install/include
+Libs: -L/home/emanuele/install/lib 
+Requires: message_runtime

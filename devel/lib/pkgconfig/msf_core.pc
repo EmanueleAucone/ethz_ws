@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/msf_core/lib/pkgconfig/msf_core.pc

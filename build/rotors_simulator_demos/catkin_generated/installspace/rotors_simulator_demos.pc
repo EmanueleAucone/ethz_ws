@@ -1,0 +1,8 @@
+prefix=/home/emanuele/install
+
+Name: rotors_simulator_demos
+Description: Description of rotors_simulator_demos
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/emanuele/install/lib 
+Requires: gazebo_msgs geometry_msgs mav_msgs roscpp sensor_msgs sensor_fusion_comm

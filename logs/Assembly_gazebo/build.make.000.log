@@ -1,0 +1,17 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/emanuele/ethz_ws/devel/.private/Assembly_gazebo
+-- Using CMAKE_PREFIX_PATH: /home/emanuele/ethz_ws/devel;/opt/ros/kinetic
+-- This workspace overlays: /home/emanuele/ethz_ws/devel;/opt/ros/kinetic
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/emanuele/ethz_ws/build/Assembly_gazebo/test_results
+-- Found gmock sources under '/usr/src/gmock': gmock will be built
+-- Found gtest sources under '/usr/src/gmock': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.14
+WARNING: Package name "Assembly_gazebo" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/emanuele/ethz_ws/build/Assembly_gazebo

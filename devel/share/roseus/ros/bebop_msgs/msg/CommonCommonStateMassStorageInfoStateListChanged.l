@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/bebop_msgs/share/roseus/ros/bebop_msgs/msg/CommonCommonStateMassStorageInfoStateListChanged.l

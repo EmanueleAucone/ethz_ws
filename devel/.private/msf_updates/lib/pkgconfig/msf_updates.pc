@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/msf_updates
+
+Name: msf_updates
+Description: Description of msf_updates
+Version: 1.0.1
+Cflags: -I/home/emanuele/ethz_ws/devel/.private/msf_updates/include -I/home/emanuele/ethz_ws/src/ethzasl_msf/msf_updates/include -I/home/emanuele/ethz_ws/devel/.private/msf_core/include -I/home/emanuele/ethz_ws/devel/.private/glog_catkin/include -I/home/emanuele/ethz_ws/devel/.private/sensor_fusion_comm/include -I/home/emanuele/ethz_ws/src/ethzasl_msf/msf_timing/include -I/home/emanuele/ethz_ws/src/ethzasl_msf/msf_core/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include -I/usr/include/eigen3
+Libs: -L/home/emanuele/ethz_ws/devel/.private/msf_updates/lib -lpose_distorter
+Requires: roscpp msf_core geometry_msgs sensor_fusion_comm

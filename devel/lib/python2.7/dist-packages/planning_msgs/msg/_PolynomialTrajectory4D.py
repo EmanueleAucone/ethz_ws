@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/planning_msgs/lib/python2.7/dist-packages/planning_msgs/msg/_PolynomialTrajectory4D.py

@@ -1,0 +1,51 @@
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:9:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In function ‘[01m[Kgazebo::VisualPlugin* gazebo::RegisterPlugin()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:6:29:[m[K [01;31m[Kerror: [m[Kexpected type-specifier before ‘[01m[KSomeVisualPlugin[m[K’
+   GZ_REGISTER_VISUAL_PLUGIN(SomeVisualPlugin)
+[01;32m[K                             ^[m[K
+[01m[K/usr/include/gazebo-7/gazebo/common/Plugin.hh:410:16:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KGZ_REGISTER_VISUAL_PLUGIN[m[K’
+     return new classname();\
+[01;32m[K                ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:6:29:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[KSomeVisualPlugin[m[K’
+   GZ_REGISTER_VISUAL_PLUGIN(SomeVisualPlugin)
+[01;32m[K                             ^[m[K
+[01m[K/usr/include/gazebo-7/gazebo/common/Plugin.hh:410:16:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KGZ_REGISTER_VISUAL_PLUGIN[m[K’
+     return new classname();\
+[01;32m[K                ^[m[K
+[01m[K/usr/include/gazebo-7/gazebo/common/Plugin.hh:410:26:[m[K [01;31m[Kerror: [m[K‘[01m[KSomeVisualPlugin[m[K’ was not declared in this scope
+     return new classname();\
+[01;32m[K                          ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:6:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KGZ_REGISTER_VISUAL_PLUGIN[m[K’
+   GZ_REGISTER_VISUAL_PLUGIN(SomeVisualPlugin)
+[01;32m[K   ^[m[K
+[01m[K/usr/include/gazebo-7/gazebo/common/Plugin.hh:410:26:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+     return new classname();\
+[01;32m[K                          ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:6:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KGZ_REGISTER_VISUAL_PLUGIN[m[K’
+   GZ_REGISTER_VISUAL_PLUGIN(SomeVisualPlugin)
+[01;32m[K   ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1:0[m[K:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:32:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kgazebo::rendering::SomeVisualPlugin[m[K’
+     class SomeVisualPlugin : public VisualPlugin
+[01;32m[K           ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::SomeVisualPlugin::VisualizeForceOnLink(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:94:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+         );
+[01;32m[K         ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:95:77:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+       this->line->AddPoint(math::Vector3(endpoint.x, endpoint.y, endpoint.z));
+[01;32m[K                                                                             ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:12:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+make[2]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/all] Errore 2
+make: *** [all] Errore 2

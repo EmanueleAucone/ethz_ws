@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/spring_transmission.dir/src/spring_transmission.cpp.o  -o /home/emanuele/ethz_ws/devel/.private/rotors_description/lib/rotors_description/spring_transmission -rdynamic 

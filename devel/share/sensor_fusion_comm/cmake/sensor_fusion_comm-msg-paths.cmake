@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/sensor_fusion_comm/share/sensor_fusion_comm/cmake/sensor_fusion_comm-msg-paths.cmake

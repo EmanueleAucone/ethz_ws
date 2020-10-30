@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/structure_haptic_drone/share/structure_haptic_drone/cmake/structure_haptic_droneConfig.cmake

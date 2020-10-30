@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/planning_msgs/share/planning_msgs/cmake/planning_msgsConfig.cmake

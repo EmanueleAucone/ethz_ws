@@ -1,0 +1,11 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kvoid forceTorqueSensorCallback(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:57:32:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+  mX = (1000) * ft_msg->wrench. );
+[01;32m[K                                ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:107:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop[m[K’ was not declared in this scope
+   loop.sleep();          
+[01;32m[K   ^[m[K
+make[2]: *** [CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/high_level_controller.dir/all] Errore 2
+make: *** [all] Errore 2

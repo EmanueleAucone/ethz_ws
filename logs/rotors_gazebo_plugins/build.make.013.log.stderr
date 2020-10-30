@@ -1,0 +1,23 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In constructor ‘[01m[Kgazebo::rendering::SomeVisualPlugin::SomeVisualPlugin()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:12:5:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+     {
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvirtual void gazebo::rendering::SomeVisualPlugin::Load(gazebo::rendering::VisualPtr, sdf::ElementPtr)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:41:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass gazebo::rendering::SomeVisualPlugin[m[K’ has no member named ‘[01m[Kvisited_visual_namespace_[m[K’
+       this->rosnode_ = new ros::NodeHandle(this->visited_visual_namespace_);
+[01;32m[K                                                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::SomeVisualPlugin::CurrentLinkPose(const PointStampedConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:59:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst PointStampedConstPtr {aka const class boost::shared_ptr<const geometry_msgs::PointStamped_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kpoint[m[K’
+  link_pose = point_msg.point;
+[01;32m[K                        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:[m[K At global scope:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:69:10:[m[K [01;31m[Kerror: [m[Kprototype for ‘[01m[Kvoid gazebo::rendering::SomeVisualPlugin::VisualizeForceOnLink(const WrenchStampedConstPtr&)[m[K’ does not match any in class ‘[01m[Kgazebo::rendering::SomeVisualPlugin[m[K’
+     void SomeVisualPlugin::VisualizeForceOnLink(const geometry_msgs::WrenchStampedConstPtr &force_msg)
+[01;32m[K          ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/src/gazebo_visual_plugin.cpp:1:0[m[K:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_gazebo_plugins/include/rotors_gazebo_plugins/gazebo_visual_plugin.h:52:14:[m[K [01;31m[Kerror: [m[Kcandidate is: void gazebo::rendering::SomeVisualPlugin::VisualizeForceOnLink(const PointConstPtr&)
+         void VisualizeForceOnLink(const geometry_msgs::PointConstPtr &force_ms);
+[01;32m[K              ^[m[K
+make[2]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/rotors_gazebo_visual_plugin.dir/all] Errore 2
+make: *** [all] Errore 2
