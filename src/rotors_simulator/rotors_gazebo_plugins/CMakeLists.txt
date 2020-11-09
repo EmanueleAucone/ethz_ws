@@ -108,10 +108,6 @@ add_library(rotors_gazebo_magnetometer_plugin src/gazebo_magnetometer_plugin.cpp
 target_link_libraries(rotors_gazebo_magnetometer_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 add_dependencies(rotors_gazebo_magnetometer_plugin ${catkin_EXPORTED_TARGETS})
 
-add_library(rotors_gazebo_visual_plugin src/gazebo_visual_plugin.cpp)
-target_link_libraries(rotors_gazebo_visual_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
-add_dependencies(rotors_gazebo_visual_plugin ${catkin_EXPORTED_TARGETS})
-
 if (BUILD_MAVLINK_INTERFACE)
   add_library(rotors_gazebo_mavlink_interface src/gazebo_mavlink_interface.cpp)
   target_link_libraries(rotors_gazebo_mavlink_interface ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${mavros_LIBRARIES})
@@ -131,7 +127,6 @@ install(
     rotors_gazebo_multirotor_base_plugin
     rotors_gazebo_gps_plugin
     rotors_gazebo_magnetometer_plugin
-    rotors_gazebo_visual_plugin
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )

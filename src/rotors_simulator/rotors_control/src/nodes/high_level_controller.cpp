@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified on: 15.10.2020
+ * Last modified on: 09.11.2020
  */
 
 #include <thread>
 #include <chrono>
 #include <math.h>
+#include <iostream>
+#include <fstream>
 
 #include <Eigen/Core>
 #include <mav_msgs/conversions.h>
@@ -34,156 +36,254 @@ using namespace std;
 
 //////////////////// Global variables ////////////////////
 
+ofstream logFile;				  // Log file to save test parameters
+
 // Pubs and subs
 ros::Subscriber pos_sub;
 ros::Publisher pos_pub;
 ros::Subscriber ft_sensor_sub;
-ros::Publisher ft_pub;
-const int PUB_TIME = 2;				// New waypoint is published every 'PUB_TIME' seconds
+ros::Publisher ft_filtered_pub;
+const int PUB_TIME = 1;				  // New waypoint is published every 'PUB_TIME' seconds
 
 // Force/torque variables
-geometry_msgs::Wrench ft_conv_msg;
 Eigen::Vector3f raw_forces;
-Eigen::Vector3f raw_momenta;
+Eigen::Vector3f raw_torques;
 double force_magnitude;
-const double MAX_LATERAL_FORCE_THRESHOLD = 0.3; // [N]
-const double DETECTED_CONTACT_THRESHOLD = 0.01; // [N]
+const double MIN_LATERAL_FORCE_THRESHOLD = 0.001; // [N]
+const double MAX_LATERAL_FORCE_THRESHOLD = 0.2;   // [N]
+const double MAX_VERTICAL_FORCE_THRESHOLD = 4;    // [N]
+const double CAGE_WEIGHT_OFFSET = 0.147;	  // [N]
 
 // Position variables
-Eigen::Vector3f pos;				// UAV global position
+Eigen::Vector3f pos;				  // UAV global position
 
 // Filter variables
-const double BETA = 0.15;			// Low-Pass FIlter main parameter
-const int n = 1;
-Eigen::Vector3f prev_forces;
-Eigen::Vector3f prev_momenta;
+const int N = 50;				  // Moving Average Filter windows size
 Eigen::Vector3f forces;
-Eigen::Vector3f momenta;
+Eigen::Vector3f torques;
+double force_y[N];
+double sum_force_y = 0.0;
+double force_z[N];
+double sum_force_z = 0.0;
+double torque_x[N];
+double sum_torque_x = 0.0;
+geometry_msgs::Wrench ft_filtered_msg;
+bool first_flag = true;
 
 // Position controller variables
 geometry_msgs::PoseStamped pos_msg;
 double desired_roll;
-int effort;
-bool slide_flag = false;
-const int MAX_EFFORT = 4;	
-const double PUSH = 0.1;
-const double LIMIT_HEIGHT = 3.5;		// Max height waypoint [m]
-const double CONTROL_RADIUS = 0.5;		// Gain: radius of the control circle
-const double ROLL_THESHOLD = 0.0043633; 	// Min roll before switch to sliding mode [rad], it corresponds to 0.25 [deg]
-const double MAX_ROLL = 0.05236; 		// Saturation value [rad], it corresponds to 3 [deg]
-
+double obstacle_inclination;
+double pushing_effort = 1;
+const double MAX_EFFORT = 3;
+const double LIMIT_HEIGHT = 3.5;		 // Max height waypoint [m]
+const double CONTROL_GAIN_Y = 3.5;		 
+const double CONTROL_GAIN_Z = 0.1;		 // Controller Gain for Z component: radius of the control circle
+const double MAX_ROLL = 0.08727;		 // Max desired roll angle [rad], equal to 5 deg
+bool sliding_flag = false;
 
 //////////////////// Functions ////////////////////
 
-// Callback for drone position
+// Unpause Gazebo simulation environment
+void UnpauseGazebo()
+{
+	std_srvs::Empty srv;
+	bool unpaused = ros::service::call("/gazebo/unpause_physics", srv);
+	unsigned int i = 0;
+
+	// Trying to unpause Gazebo for 10 seconds.
+	while (i <= 10 && !unpaused)
+	{
+		ROS_INFO("Wait for 1 second before trying to unpause Gazebo again.");
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		unpaused = ros::service::call("/gazebo/unpause_physics", srv);
+		++i;
+	}
+
+	if (!unpaused)
+		ROS_FATAL("Could not wake up Gazebo.");
+	else
+		ROS_INFO("Unpaused the Gazebo simulation.");
+
+	// Wait for 5 seconds to let the Gazebo GUI show up.
+  	ros::Duration(5.0).sleep();
+}
+
+// Callback for drone position data acquisition from odometry sensor
 void positionCallback(const geometry_msgs::PointStamped::ConstPtr& position_msg)
 {
-	// Store data about position for control strategy
+	// Store position data for control strategy
 	pos[0] = position_msg->point.x;
 	pos[1] = position_msg->point.y;
 	pos[2] = position_msg->point.z;
 }
 
-// Callback for force/torque measurement acquisition
+// Callback for force/torque measurement acquisition from FT sensor
 void forceTorqueSensorCallback(const geometry_msgs::WrenchStamped::ConstPtr& ft_msg)
 {
-	// Store data about forces/torques for control strategy
-	raw_forces[0] = (1000) * ft_msg->wrench.force.x;
-	raw_forces[1] = (1000) * ft_msg->wrench.force.y;
-	raw_forces[2] = (1000) * ft_msg->wrench.force.z;
-	raw_momenta[0] = (1000) * ft_msg->wrench.torque.x;
-	raw_momenta[1] = (1000) * ft_msg->wrench.torque.y;
-	raw_momenta[2] = (1000) * ft_msg->wrench.torque.z;
+	// Store raw forces/torques data
+	raw_forces[0] = ft_msg->wrench.force.x;
+	raw_forces[1] = ft_msg->wrench.force.y;
+	raw_forces[2] = ft_msg->wrench.force.z;
+	raw_torques[0] = ft_msg->wrench.torque.x;
+	raw_torques[1] = ft_msg->wrench.torque.y;
+	raw_torques[2] = ft_msg->wrench.torque.z;
+}
+
+// Filtering force/torque sensor measurements
+void FilterFTSensor()
+{
+	int i;		
+	// FIR: Moving Average Filtering
+	if(first_flag)
+	{
+		for(i = 0; i < N; i++)
+		{
+			ros::spinOnce();
+			// Fill the first N elements
+			force_y[i] = raw_forces[1];
+			force_z[i] = raw_forces[2];
+			torque_x[i] = raw_torques[0];
+			sum_force_y += force_y[i];
+			sum_force_z += force_z[i];
+			sum_torque_x += torque_x[i];
+		}
+		first_flag = false;
+	}
+	else
+	{
+		// Shift the moving average window
+		for(i = 0; i < N-1; i++)
+		{
+			force_y[i] = force_y[i+1];
+			force_z[i] = force_z[i+1];
+			torque_x[i] = torque_x[i+1];
+		}
+		// Add a new sample	
+		ros::spinOnce();
+		force_y[N-1] = raw_forces[1];
+		force_z[N-1] = raw_forces[2];
+		torque_x[N-1] = raw_torques[0];
+		// Update the sum
+		sum_force_y += force_y[N-1];
+		sum_force_z += force_z[N-1];
+		sum_torque_x += torque_x[N-1];
+
+	}
+	// Publish converted measurements for visualization
+	ft_filtered_msg.force.y = sum_force_y / N; 
+	ft_filtered_msg.force.z = sum_force_z / N; 
+	ft_filtered_msg.torque.x = sum_torque_x / N;
+	ft_filtered_pub.publish(ft_filtered_msg);
+
+	// As the window will be shifted, remove the first element
+	sum_force_y -= force_y[0];
+	sum_force_z -= force_z[0];
+	sum_torque_x -= torque_x[0];
+
+	force_magnitude = sqrt(ft_filtered_msg.force.x*ft_filtered_msg.force.x + 
+			       ft_filtered_msg.force.y*ft_filtered_msg.force.y + 
+			       ft_filtered_msg.force.z*ft_filtered_msg.force.z);
 }
 
 // Compute the desired roll angle
-void compute_desired_roll()
+void ComputeDesiredRoll()
 {
-	force_magnitude = sqrt( ft_conv_msg.force.x*ft_conv_msg.force.x + 
-				ft_conv_msg.force.y*ft_conv_msg.force.y + 
-				ft_conv_msg.force.z*ft_conv_msg.force.z);
-	cout << "Force along Y [N]: " << ft_conv_msg.force.y << endl;
-	cout << "Force along Z [N]: " << ft_conv_msg.force.z << endl;
-	cout << "Force magnitude [N]: " << force_magnitude << endl;
+	// Calculate roll angle from the components of the external force
+	desired_roll = -atan2(ft_filtered_msg.force.y, fabs(ft_filtered_msg.force.z));
 
-	desired_roll = atan2(ft_conv_msg.force.y, fabs(ft_conv_msg.force.z));
 	// Saturation
 	if(desired_roll > MAX_ROLL)
 		desired_roll = MAX_ROLL;
 	else if(desired_roll < -MAX_ROLL)
 		desired_roll = -MAX_ROLL;
-	cout << "Desired roll angle: " << (180/M_PI) * desired_roll << " [deg], " << desired_roll << " [rad]" << endl;
+
+	cout << "Desired roll angle: " << (180/M_PI)*desired_roll << " [deg], " << desired_roll << " [rad]" << endl;
 }
 
-// Filtering force/torque sensor
-void filter_ft_sensor()
+// Compute obstacle inclination angle
+void ComputeObstacleInclination()
 {
-	int i;
-	Eigen::Vector3f sum_forces(0,0,0);
-	Eigen::Vector3f sum_momenta(0,0,0);
+	double A = ft_filtered_msg.force.z + CAGE_WEIGHT_OFFSET;
+	double B = ft_filtered_msg.force.y;	
+	double C = -ft_filtered_msg.torque.x/0.51;
+
+	/*
+	cout << "OBSTACLE INCLINATION - method 1: " 
+	     << (180/M_PI) * 2 * atan((A - sqrt(A*A + B*B - C*C))/(B + C)) << ", " 
+	     << (180/M_PI) * 2 * atan((A + sqrt(A*A + B*B - C*C))/(B + C)) << endl;
+
+	cout << "OBSTACLE INCLINATION - method 2: " 
+	     << (180/M_PI) * (-acos(C/sqrt(A*A + B*B)) + atan(A/B)) << ", " 
+	     << (180/M_PI) * (acos(C/sqrt(A*A + B*B)) + atan(A/B)) << endl;
+	*/
+
+	obstacle_inclination = 2 * atan((A + sqrt(A*A + B*B - C*C))/(B + C));
+	cout << "OBSTACLE INCLINATION " << (180/M_PI)*obstacle_inclination << " [deg], " << obstacle_inclination << " [rad]" << endl;
 	
-	// Low-Pass Filtering
-	for(i = 0; i < n; i++)
+}
+
+// New waypoint computed with respect to the circle formulation
+void ControlStrategy(double effort, double roll_d)
+{
+	pos_msg.header.stamp = ros::Time::now();
+
+	// X position is always fixed (because the drone is constraint to the structure)
+	pos_msg.pose.position.x = pos[0];
+
+	// Change Y,Z coordinate depending on the current state of the system
+	pos_msg.pose.position.y = pos[1] - (effort * CONTROL_GAIN_Y * sin(roll_d));
+	pos_msg.pose.position.z = pos[2] + (effort * CONTROL_GAIN_Z * cos(roll_d));
+	pos_pub.publish(pos_msg);
+}
+
+void StateMachine()
+{
+	// Print force filtered data
+	cout << "Rolling moment (x) [N*m] " << ft_filtered_msg.torque.x << endl;
+	cout << "Lateral Force (y) [N]: " << ft_filtered_msg.force.y << endl;
+	cout << "Vertical Force (z) [N]: " << ft_filtered_msg.force.z << endl;
+	cout << "Force magnitude [N]: " << force_magnitude << endl;
+
+	// No contact detected, drone free to fly up
+	if(fabs(ft_filtered_msg.force.y) < MIN_LATERAL_FORCE_THRESHOLD)
 	{
-		ros::spinOnce();
-		forces = (1 - BETA)*prev_forces + BETA*raw_forces;
-		momenta = (1 - BETA)*prev_momenta + BETA*raw_momenta;
-
-		prev_forces = forces;
-		prev_momenta = momenta;
-
-		sum_forces += forces;
-		sum_momenta += momenta;	
+		cout << "FREE FLIGHT MODE!" << endl;
+		// Reset pushing effort	
+		pushing_effort = 1;	
+		// Free flight: height reference increased of a fixed amount
+		ControlStrategy(pushing_effort, 0);
+		// Reset sliding flag
+		sliding_flag = false;
+	}
+	// Contact detected: push until a threshold in the lateral or vertical force is overcome
+	else if(((fabs(ft_filtered_msg.force.y) > MIN_LATERAL_FORCE_THRESHOLD && fabs(ft_filtered_msg.force.y) < MAX_LATERAL_FORCE_THRESHOLD) && fabs(ft_filtered_msg.force.z) < MAX_VERTICAL_FORCE_THRESHOLD) && !sliding_flag)
+	{
+		cout << "CONTACT DETECTED: PUSH MODE!" << endl;
+		if(pushing_effort < MAX_EFFORT) 	
+			pushing_effort += 0.5;
+		// Increase the height reference to push against the detected obstacle 
+		ControlStrategy(pushing_effort, 0);
+		// Reset sliding flag
+		sliding_flag = false;
+		ComputeObstacleInclination();
+	}
+	// Threshold overcome: obstacle not traversable
+	else if(fabs(ft_filtered_msg.force.y) > MAX_LATERAL_FORCE_THRESHOLD || fabs(ft_filtered_msg.force.z) > MAX_VERTICAL_FORCE_THRESHOLD)
+	{
+		cout << "OBSTACLE NOT TRAVERSABLE: SLIDE MODE!" << endl;
+		// Slide along the obstacle adjusting new position waypoint according to the desired roll
+		if(!sliding_flag)
+			ComputeDesiredRoll();
+		ControlStrategy(pushing_effort, -obstacle_inclination);//desired_roll);
+		sliding_flag = true;
+		//ComputeObstacleInclination();
 	}
 
-	// Publish converted measurements for visualization
-	ft_conv_msg.force.x = sum_forces[0] / n; 
-	ft_conv_msg.force.y = sum_forces[1] / n; 
-	ft_conv_msg.force.z = sum_forces[2] / n; 
-	ft_conv_msg.torque.x = sum_momenta[0] / n;
-	ft_conv_msg.torque.y = sum_momenta[1] / n;
-	ft_conv_msg.torque.z = sum_momenta[2] / n;
-	ft_pub.publish(ft_conv_msg);
-}
-
-// Fly up and push if a contact is detected
-void fly_push()
-{
-	// Mantain you Y position
-	pos_msg.pose.position.y = pos[1];
-	
-	// Contact detection checking
-	if(fabs(ft_conv_msg.force.y) > DETECTED_CONTACT_THRESHOLD && fabs(ft_conv_msg.force.y) < MAX_LATERAL_FORCE_THRESHOLD)
-	{
-		cout << "CONTACT DETECTED: PUSH!" << endl;
-		// Adjust the pushing force 	
-		effort++;	
-	}				
-	else
-		effort = 1;
-
-	// Increasing the height waypoint				
-	pos_msg.pose.position.z = pos[2] + effort*PUSH;	
-	pos_pub.publish(pos_msg);
-
-	slide_flag = true;
-}
-
-// Slide along the obstacle adjusting new position waypoint depending on the desired roll
-void slide()
-{
-	// Change Y coordinate depending on the "circle formulation" 
-	if(desired_roll > 0.0)
-		pos_msg.pose.position.y = pos[1] - (CONTROL_RADIUS * cos(desired_roll));
-	else
-		pos_msg.pose.position.y = pos[1] + (CONTROL_RADIUS * cos(desired_roll));
-
-	// Change Z coordinate depending on the "circle formulation" 
-	pos_msg.pose.position.z = pos[2] + (CONTROL_RADIUS * sin(desired_roll));
-	pos_pub.publish(pos_msg);
-	cout << "BETTER STOP PUSHING. LET'S SLIDE!" << endl;
-
-	slide_flag = false;
+	// Print current position and commanded waypoint
+	cout << "Current position = X: " << pos[0] << ", Y: " << pos[1] << ", Z: " << pos[2] << endl;
+	cout << "Publishing new waypoint! X: " << pos_msg.pose.position.x << ", Y: " << pos_msg.pose.position.y << ", Z: " << pos_msg.pose.position.z << endl;
+	cout << "--------------------------------------------------------------" << endl;
 }
 
 // Main function
@@ -191,67 +291,49 @@ int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "high_level_controller");
 	ros::NodeHandle nh;
-	ros::Rate loop(500);
+	ros::Rate loop(100);
 
 	// Subscribers and Publishers 
 	ft_sensor_sub = nh.subscribe("/haptic_drone/ft_sensor_topic", 10, &forceTorqueSensorCallback);
 	pos_sub = nh.subscribe("/haptic_drone/odometry_sensor1/position", 10, &positionCallback);
 	pos_pub = nh.advertise<geometry_msgs::PoseStamped>(mav_msgs::default_topics::COMMAND_POSE, 10);
-	ft_pub = nh.advertise<geometry_msgs::Wrench>("/haptic_drone/ft_converted_measurements", 10);
+	ft_filtered_pub = nh.advertise<geometry_msgs::Wrench>("/haptic_drone/ft_filtered_measurements", 10);
 	
 	sleep(5);
 
 	ros::spinOnce();
-
+	
+	// Initialization
 	cout << "\r\n\n\n\033[32m\033[1mCLICK TO START \033[0m" << endl; 
-	while ((getchar()) != '\n');	
+	while ((getchar()) != '\n');
+	UnpauseGazebo();	
 	cout << "\r\n\n\n\033[32m\033[1mSTARTED! \033[0m" << endl; 
 	
-	effort = 1;
-	prev_forces = raw_forces;
-	prev_momenta = raw_momenta;
 	double starting_time = ros::Time::now().toSec();
 	
 	while(ros::ok())         
 	{
 		ros::spinOnce();
-		filter_ft_sensor();
+		FilterFTSensor();
 				
 		// Condition verified until the new height waypoint is inside the structure limits		
 		if((pos[2] < LIMIT_HEIGHT) && ((ros::Time::now().toSec() - starting_time) > PUB_TIME)) 
 		{
-			// Compute desired roll needed to change the waypoint
-			compute_desired_roll();
-
-			// Command position
-			pos_msg.header.stamp = ros::Time::now();
-			pos_msg.pose.position.x = pos[0];
-			
-			// Fly up!
-			if(fabs(desired_roll) < ROLL_THESHOLD && effort < MAX_EFFORT)
-				fly_push();
-			// Slide!
-			else	
-			{
-				effort = 1;
-				// To avoid undesired slides back
-				if(slide_flag)
-				{
-					slide();
-					sleep(4);
-				}				
-				else
-					fly_push();
+			// State Machine running!
+			StateMachine();
 				
-			}
-			cout << "Current position = X: " << pos[0] << ", Y: " << pos[1] << ", Z: " << pos[2] << endl;
-			cout << "Publishing new waypoint! X: " << pos_msg.pose.position.x << ", Y: " << pos_msg.pose.position.y << ", Z: " << pos_msg.pose.position.z << endl;
-			cout << "--------------------------------------------------------------" << endl;
-		  						
-				
-			starting_time = ros::Time::now().toSec();
-			
+			starting_time = ros::Time::now().toSec();	
 		}
+
+		if(pos[2] >= LIMIT_HEIGHT)
+			cout << "\r\n\n\n\033[32m\033[1mMAXIMUM HEIGHT REACHED! \033[0m" << endl; 
+	
+		// Open log file, save data and close it
+		/*
+		logFile.open("/home/emanuele/ethz_ws/haptic_drone_log_file.txt", std::ofstream::app);
+		logFile << pos[1] << ", " << pos[2] << ", " << pos_msg.pose.position.y << ", " << pos_msg.pose.position.z << ", " << (180/M_PI)*desired_roll << ", " << ft_filtered_msg.force.y << ", " << ft_filtered_msg.force.z << ", " << effort << ";" << endl;
+		logFile.close();
+		*/
 		loop.sleep();          
 	}
 	return 0;

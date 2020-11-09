@@ -1,8 +1,0 @@
-[ 12%] [34m[1mPerforming configure step for 'glog_src'[0m
-CMakeFiles/glog_src.dir/build.make:108: set di istruzioni per l'obiettivo "glog_src-prefix/src/glog_src-stamp/glog_src-configure" non riuscito
-CMakeFiles/Makefile2:291: set di istruzioni per l'obiettivo "CMakeFiles/glog_src.dir/all" non riuscito
-Makefile:138: set di istruzioni per l'obiettivo "all" non riuscito
-/bin/sh: 1: autoreconf: not found
-make[2]: *** [glog_src-prefix/src/glog_src-stamp/glog_src-configure] Errore 127
-make[1]: *** [CMakeFiles/glog_src.dir/all] Errore 2
-make: *** [all] Errore 2

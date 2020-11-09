@@ -70,7 +70,8 @@ namespace gazebo
 		protected: void OnUpdate()
 		{
 			double current_angle = this->joint->GetAngle(0).Radian();
-			this->joint->SetForce(0, this->kx*(this->setPoint-current_angle));			
+			this->joint->SetForce(0, this->kx*(this->setPoint-current_angle));
+			std::cout << "Current angle (branch): " << current_angle << std::endl;			
 		}
 		
 	};

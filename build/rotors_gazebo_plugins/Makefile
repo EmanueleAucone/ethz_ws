@@ -78,17 +78,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -132,6 +121,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -647,6 +647,19 @@ sensor_msgs_generate_messages_nodejs/fast:
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -1087,32 +1100,6 @@ tf2_msgs_generate_messages_nodejs: cmake_check_build_system
 tf2_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named rotors_gazebo_visual_plugin
-
-# Build rule for target.
-rotors_gazebo_visual_plugin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rotors_gazebo_visual_plugin
-.PHONY : rotors_gazebo_visual_plugin
-
-# fast build rule for target.
-rotors_gazebo_visual_plugin/fast:
-	$(MAKE) -f CMakeFiles/rotors_gazebo_visual_plugin.dir/build.make CMakeFiles/rotors_gazebo_visual_plugin.dir/build
-.PHONY : rotors_gazebo_visual_plugin/fast
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_cpp
@@ -1708,33 +1695,6 @@ src/gazebo_odometry_plugin.cpp.s:
 	$(MAKE) -f CMakeFiles/rotors_gazebo_odometry_plugin.dir/build.make CMakeFiles/rotors_gazebo_odometry_plugin.dir/src/gazebo_odometry_plugin.cpp.s
 .PHONY : src/gazebo_odometry_plugin.cpp.s
 
-src/gazebo_visual_plugin.o: src/gazebo_visual_plugin.cpp.o
-
-.PHONY : src/gazebo_visual_plugin.o
-
-# target to build an object file
-src/gazebo_visual_plugin.cpp.o:
-	$(MAKE) -f CMakeFiles/rotors_gazebo_visual_plugin.dir/build.make CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.o
-.PHONY : src/gazebo_visual_plugin.cpp.o
-
-src/gazebo_visual_plugin.i: src/gazebo_visual_plugin.cpp.i
-
-.PHONY : src/gazebo_visual_plugin.i
-
-# target to preprocess a source file
-src/gazebo_visual_plugin.cpp.i:
-	$(MAKE) -f CMakeFiles/rotors_gazebo_visual_plugin.dir/build.make CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.i
-.PHONY : src/gazebo_visual_plugin.cpp.i
-
-src/gazebo_visual_plugin.s: src/gazebo_visual_plugin.cpp.s
-
-.PHONY : src/gazebo_visual_plugin.s
-
-# target to generate assembly for a file
-src/gazebo_visual_plugin.cpp.s:
-	$(MAKE) -f CMakeFiles/rotors_gazebo_visual_plugin.dir/build.make CMakeFiles/rotors_gazebo_visual_plugin.dir/src/gazebo_visual_plugin.cpp.s
-.PHONY : src/gazebo_visual_plugin.cpp.s
-
 src/gazebo_wind_plugin.o: src/gazebo_wind_plugin.cpp.o
 
 .PHONY : src/gazebo_wind_plugin.o
@@ -1770,7 +1730,6 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... tf_generate_messages_lisp"
@@ -1810,6 +1769,7 @@ help:
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -1846,8 +1806,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rotors_gazebo_visual_plugin"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... rotors_gazebo_multirotor_base_plugin"
 	@echo "... topic_tools_generate_messages_lisp"
@@ -1863,6 +1821,7 @@ help:
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... rotors_comm_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... install/strip"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... rotors_gazebo_bag_plugin"
@@ -1902,9 +1861,6 @@ help:
 	@echo "... src/gazebo_odometry_plugin.o"
 	@echo "... src/gazebo_odometry_plugin.i"
 	@echo "... src/gazebo_odometry_plugin.s"
-	@echo "... src/gazebo_visual_plugin.o"
-	@echo "... src/gazebo_visual_plugin.i"
-	@echo "... src/gazebo_visual_plugin.s"
 	@echo "... src/gazebo_wind_plugin.o"
 	@echo "... src/gazebo_wind_plugin.i"
 	@echo "... src/gazebo_wind_plugin.s"

@@ -31,12 +31,12 @@
 
   <xacro:include filename="$(find rotors_description)/urdf/nano17.urdf.xacro" />
 
-  <!-- Macro to add the force vector arrow 
-  <xacro:macro name="arrow_plugin">
+  <!-- Macro to add the force vector arrow -->
+  <!--<xacro:macro name="arrow_plugin">-->
     <gazebo>
-      <plugin name="gazebo_visual_plugin" filename="librotors_gazebo_visual_plugin.so" />
+      <plugin name="force_vector" filename="libgazebo_force_vector_visual.so" />
     </gazebo>
-  </xacro:macro>-->
+  <!--</xacro:macro>-->
 
 </robot>
 
