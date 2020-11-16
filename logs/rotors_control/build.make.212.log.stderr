@@ -1,0 +1,34 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kvoid filter_ft_sensor()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:134:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope
+  for(i = 0; i < n; i++)
+[01;32m[K                 ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:144:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kforces_y[m[K’ was not declared in this scope
+   forces_y[i] = raw_forces[1];
+[01;32m[K   ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:145:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kforces_z[m[K’ was not declared in this scope
+   forces_z[i] = raw_forces[2];
+[01;32m[K   ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:146:3:[m[K [01;31m[Kerror: [m[K‘[01m[Ktorques_x[m[K’ was not declared in this scope
+   torques_x[i] = raw_torques[0];
+[01;32m[K   ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:161:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ksum_forces_y[m[K’ was not declared in this scope
+  ft_filtered_msg.force.y = sum_forces_y / N; 
+[01;32m[K                            ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:162:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ksum_forces_z[m[K’ was not declared in this scope
+  ft_filtered_msg.force.z = sum_forces_z / N; 
+[01;32m[K                            ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:163:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksum_torques_x[m[K’ was not declared in this scope
+  ft_filtered_msg.torque.x = sum_torques_x / N;
+[01;32m[K                             ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:167:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kforces_y[m[K’ was not declared in this scope
+  sum_force_y += forces_y[0];
+[01;32m[K                 ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:168:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kforces_z[m[K’ was not declared in this scope
+  sum_force_z += forces_z[0];
+[01;32m[K                 ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:169:18:[m[K [01;31m[Kerror: [m[K‘[01m[Ktorques_x[m[K’ was not declared in this scope
+  sum_torque_x += torques_x[0];
+[01;32m[K                  ^[m[K
+make[2]: *** [CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/high_level_controller.dir/all] Errore 2
+make: *** [all] Errore 2

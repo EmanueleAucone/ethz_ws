@@ -1,0 +1,5 @@
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:8:42:[m[K [01;31m[Kfatal error: [m[Krotors_gazebo_plugins/common.h: File o directory non esistente
+compilation terminated.
+make[2]: *** [CMakeFiles/gazebo_force_vector_visual.dir/src/gazebo_force_vector_visual.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/gazebo_force_vector_visual.dir/all] Errore 2
+make: *** [all] Errore 2

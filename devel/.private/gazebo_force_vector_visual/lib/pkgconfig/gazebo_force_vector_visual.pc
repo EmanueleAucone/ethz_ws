@@ -1,0 +1,8 @@
+prefix=/home/emanuele/ethz_ws/devel/.private/gazebo_force_vector_visual
+
+Name: gazebo_force_vector_visual
+Description: Description of gazebo_force_vector_visual
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/emanuele/ethz_ws/devel/.private/gazebo_force_vector_visual/lib 
+Requires: roscpp gazebo_ros

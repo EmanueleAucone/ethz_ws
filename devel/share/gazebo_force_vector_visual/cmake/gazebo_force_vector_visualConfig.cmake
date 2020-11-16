@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/gazebo_force_vector_visual/share/gazebo_force_vector_visual/cmake/gazebo_force_vector_visualConfig.cmake

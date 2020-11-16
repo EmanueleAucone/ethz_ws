@@ -1,0 +1,20 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kvoid filter_ft_sensor()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:134:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmomenta[m[K’ was not declared in this scope
+   momenta = (1 - BETA)*prev_momenta + BETA*raw_momenta;
+[01;32m[K   ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:134:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kprev_momenta[m[K’ was not declared in this scope
+   momenta = (1 - BETA)*prev_momenta + BETA*raw_momenta;
+[01;32m[K                        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:134:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kraw_momenta[m[K’ was not declared in this scope
+   momenta = (1 - BETA)*prev_momenta + BETA*raw_momenta;
+[01;32m[K                                            ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:216:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kprev_momenta[m[K’ was not declared in this scope
+  prev_momenta = raw_momenta;
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:216:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kraw_momenta[m[K’ was not declared in this scope
+  prev_momenta = raw_momenta;
+[01;32m[K                 ^[m[K
+make[2]: *** [CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/high_level_controller.dir/all] Errore 2
+make: *** [all] Errore 2

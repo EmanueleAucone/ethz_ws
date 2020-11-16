@@ -1,0 +1,8 @@
+prefix=/home/emanuele/install
+
+Name: gazebo_force_vector_visual
+Description: Description of gazebo_force_vector_visual
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/emanuele/install/lib 
+Requires: roscpp gazebo_ros

@@ -1,0 +1,22 @@
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::GazeboVisualPlugin::VisualizeForceOnLink(const ConstPtr&)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:112:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kforce_msg[m[K’ was not declared in this scope
+        this->endpoint = CalculateEndpointOfForceVector(force_msg->wrench);
+[01;32m[K                                                        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::GazeboVisualPlugin::OnUpdate()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:137:70:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+   line->AddPoint(math::Vector3(link_pose.x, link_pose.y, link_pose.z));
+[01;32m[K                                                                      ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:13:0[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:138:67:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+   line->AddPoint(math::Vector3(endpoint.x, endpoint.y, endpoint.z));
+[01;32m[K                                                                   ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:13:0[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+make[2]: *** [CMakeFiles/gazebo_force_vector_visual.dir/src/gazebo_force_vector_visual.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/gazebo_force_vector_visual.dir/all] Errore 2
+make: *** [all] Errore 2

@@ -1,0 +1,7 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:[m[K In function ‘[01m[Kvoid unpause_Gazebo()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_controller.cpp:255:11:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [-fpermissive]
+   return -1;
+[01;32m[K           ^[m[K
+make[2]: *** [CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/high_level_controller.dir/all] Errore 2
+make: *** [all] Errore 2

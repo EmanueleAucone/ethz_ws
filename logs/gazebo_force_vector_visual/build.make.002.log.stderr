@@ -1,0 +1,15 @@
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:[m[K In member function ‘[01m[Kvoid gazebo::rendering::GazeboVisualPlugin::OnUpdate()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:137:70:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+   line->AddPoint(math::Vector3(link_pose.x, link_pose.y, link_pose.z));
+[01;32m[K                                                                      ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:13:0[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:138:67:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid gazebo::rendering::DynamicLines::AddPoint(const gazebo::math::Vector3&, const gazebo::common::Color&)[m[K’ is deprecated [-Wdeprecated-declarations]
+   line->AddPoint(math::Vector3(endpoint.x, endpoint.y, endpoint.z));
+[01;32m[K                                                                   ^[m[K
+In file included from [01m[K/home/emanuele/ethz_ws/src/gazebo_force_vector_visual/src/gazebo_force_vector_visual.cpp:13:0[m[K:
+[01m[K/usr/include/gazebo-7/gazebo/rendering/DynamicLines.hh:64:20:[m[K [01;36m[Knote: [m[Kdeclared here
+       public: void AddPoint(const math::Vector3 &_pt,
+[01;32m[K                    ^[m[K
