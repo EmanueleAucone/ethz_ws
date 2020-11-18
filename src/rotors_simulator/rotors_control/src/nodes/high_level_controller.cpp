@@ -49,9 +49,11 @@ const int PUB_TIME = 1;				  	// New waypoint is published every 'PUB_TIME' seco
 Eigen::Vector3f raw_forces;
 Eigen::Vector3f raw_torques;
 double force_magnitude;
-const double MIN_LATERAL_FORCE_THRESHOLD  = 0.001; 	// [N]
+//const double MIN_LATERAL_FORCE_THRESHOLD  = 0.001; 	// [N]
+const double MIN_LATERAL_FORCE_THRESHOLD  = 0.002; 	// [N]
 const double MAX_LATERAL_FORCE_THRESHOLD  = 0.2;   	// [N]
-const double MAX_VERTICAL_FORCE_THRESHOLD = 2;  	// [N]
+// const double MAX_VERTICAL_FORCE_THRESHOLD = 2;  	// [N]
+const double MAX_VERTICAL_FORCE_THRESHOLD = 1;  	// [N]
 const double CAGE_WEIGHT_OFFSET           = 0.147;  	// [N]
 const double CAGE_RADIUS                  = 0.255;  	// [m]
 
@@ -75,12 +77,15 @@ bool first_flag     = true;
 geometry_msgs::PoseStamped pos_msg;
 double desired_roll, commanded_roll;
 double pushing_effort       = 1;
-const double DELTA_PUSH	    = 0.10;
-const double MAX_EFFORT     = 2.5;
-const double LIMIT_HEIGHT   = 3.5;		 	// Max height waypoint [m]
-const double CONTROL_GAIN_Y = 2; //3.5;	 	 	// Controller Gain for Y component
+// const double DELTA_PUSH	    = 0.10;
+const double DELTA_PUSH	    = 0.1;
+const double MAX_EFFORT     = 10;
+const double LIMIT_HEIGHT   = 3.9;		 	// Max height waypoint [m]
+//const double CONTROL_GAIN_Y = 2; 	 	 	// Controller Gain for Y component
+const double CONTROL_GAIN_Y = 1; 	 	 	// Controller Gain for Y component
 const double CONTROL_GAIN_Z = 0.1;		 	// Controller Gain for Z component
-const double MAX_ROLL       = 0.08727;		 	// Max desired roll angle [rad], equal to 5 deg
+//const double MAX_ROLL       = 0.08727;		// Max desired roll angle [rad], equal to 5 deg
+const double MAX_ROLL       = 0.261799;		 	// Max desired roll angle [rad], equal to 15 deg
 bool sliding_flag           = false;
 
 // Estimated parameters
@@ -194,7 +199,8 @@ void FilterFTSensor()
 void ComputeDesiredRoll()
 {
 	// Calculate roll angle from the components of the external force
-	desired_roll = -atan2(ft_filtered_msg.force.y, fabs(ft_filtered_msg.force.z));
+	// desired_roll = -atan2(ft_filtered_msg.force.y, fabs(ft_filtered_msg.force.z));
+	desired_roll = atan2(fabs(ft_filtered_msg.force.y), fabs(ft_filtered_msg.force.z));
 
 	cout << "Desired roll angle: " << (180/M_PI)*desired_roll << " [deg], " 
                                        <<            desired_roll << " [rad]" 
@@ -319,7 +325,9 @@ void StateMachine()
 			ComputeDesiredRoll();
 
 		// Adaptive adjustment of the desired sliding heading angle		
-		ControlStrategy(pushing_effort, desired_roll/mu);
+		//ControlStrategy(pushing_effort, desired_roll/mu);
+		int sign = (ft_filtered_msg.torque.x > 0) ? -1 : 1;
+		ControlStrategy(pushing_effort, sign*desired_roll*fabs(ft_filtered_msg.force.z)/MAX_VERTICAL_FORCE_THRESHOLD);
 				
 		// Update variables
 		sliding_flag = true;
