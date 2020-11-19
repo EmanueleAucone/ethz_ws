@@ -1,0 +1,62 @@
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[  0%] Built target mav_msgs_generate_messages_eus
+[  0%] Built target mav_msgs_generate_messages_py
+[  0%] Built target mav_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target trajectory_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target mav_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target trajectory_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target nav_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target trajectory_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target trajectory_msgs_generate_messages_nodejs
+[  0%] Built target trajectory_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target nav_msgs_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target nav_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target nav_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target mav_msgs_generate_messages_lisp
+[  0%] Built target nav_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_eus
+[35m[1mScanning dependencies of target high_level_roll_thrust_controller[0m
+[ 16%] Built target lee_position_controller
+[ 33%] Built target roll_pitch_yawrate_thrust_controller
+[ 50%] Built target high_level_controller
+[ 58%] [32mBuilding CXX object CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.o[0m
+[ 75%] Built target lee_position_controller_node
+[ 91%] Built target roll_pitch_yawrate_thrust_controller_node
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kvoid StateMachine()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:330:7:[m[K [01;31m[Kerror: [m[K‘[01m[Ksliding[m[K’ was not declared in this scope
+   if(!sliding)
+[01;32m[K       ^[m[K
+CMakeFiles/high_level_roll_thrust_controller.dir/build.make:62: set di istruzioni per l'obiettivo "CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.o" non riuscito
+make[2]: *** [CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.o] Errore 1
+CMakeFiles/Makefile2:111: set di istruzioni per l'obiettivo "CMakeFiles/high_level_roll_thrust_controller.dir/all" non riuscito
+make[1]: *** [CMakeFiles/high_level_roll_thrust_controller.dir/all] Errore 2
+Makefile:138: set di istruzioni per l'obiettivo "all" non riuscito
+make: *** [all] Errore 2

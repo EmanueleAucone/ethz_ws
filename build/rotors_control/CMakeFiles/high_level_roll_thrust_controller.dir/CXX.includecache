@@ -239,6 +239,12 @@ thread
 -
 chrono
 -
+math.h
+-
+iostream
+-
+fstream
+-
 Eigen/Core
 -
 mav_msgs/conversions.h
@@ -250,7 +256,9 @@ ros/ros.h
 std_srvs/Empty.h
 -
 mav_msgs/RollPitchYawrateThrust.h
-/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/mav_msgs/RollPitchYawrateThrust.h
+-
+geometry_msgs/PoseStamped.h
+-
 geometry_msgs/WrenchStamped.h
 -
 Eigen/Geometry

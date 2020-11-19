@@ -1,0 +1,112 @@
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:37:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kofstream[m[K’ does not name a type
+ ofstream logFile;       // Log file to save test parameters
+[01;32m[K ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kvoid ComputeDesiredRoll()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:200:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ was not declared in this scope
+  cout << "Desired roll angle: " << (180/M_PI)*desired_roll << " [deg], " 
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:200:2:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22:0[m[K:
+[01m[K/usr/include/c++/5/iostream:61:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::cout[m[K’
+   extern ostream cout;  /// Linked to standard output
+[01;32m[K                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:202:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+            << endl;
+[01;32m[K               ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:202:15:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/5/iostream:39:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22[m[K:
+[01m[K/usr/include/c++/5/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kvoid ComputeObstacleInformation()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:214:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ was not declared in this scope
+  cout << "OBSTACLE INCLINATION: " << (180/M_PI)*obstacle_inclination << " [deg], " 
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:214:2:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22:0[m[K:
+[01m[K/usr/include/c++/5/iostream:61:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::cout[m[K’
+   extern ostream cout;  /// Linked to standard output
+[01;32m[K                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:216:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+       << endl;
+[01;32m[K          ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:216:10:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/5/iostream:39:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22[m[K:
+[01m[K/usr/include/c++/5/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kvoid ControlStrategy(double, double)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:245:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ was not declared in this scope
+  cout << "-------" << endl;
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:245:2:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22:0[m[K:
+[01m[K/usr/include/c++/5/iostream:61:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::cout[m[K’
+   extern ostream cout;  /// Linked to standard output
+[01;32m[K                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:245:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+  cout << "-------" << endl;
+[01;32m[K                       ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:245:23:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/5/iostream:39:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22[m[K:
+[01m[K/usr/include/c++/5/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kvoid StateMachine()[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:278:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ was not declared in this scope
+  cout << "\r\n\n\033[32m\033[1m--------------------------------------------------------------\033[0m" << endl;
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:278:2:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22:0[m[K:
+[01m[K/usr/include/c++/5/iostream:61:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::cout[m[K’
+   extern ostream cout;  /// Linked to standard output
+[01;32m[K                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:278:106:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+  cout << "\r\n\n\033[32m\033[1m--------------------------------------------------------------\033[0m" << endl;
+[01;32m[K                                                                                                          ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:278:106:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/5/iostream:39:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22[m[K:
+[01m[K/usr/include/c++/5/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:304:221:[m[K [01;31m[Kerror: [m[K‘[01m[Kpushing_effort[m[K’ was not declared in this scope
+  else if(((fabs(ft_filtered_msg.force.y) > MIN_LATERAL_FORCE_THRESHOLD && fabs(ft_filtered_msg.force.y) < MAX_LATERAL_FORCE_THRESHOLD) && fabs(ft_filtered_msg.force.z) < MAX_VERTICAL_FORCE_THRESHOLD) && !sliding_flag && pushing_effort < MAX_EFFORT)
+[01;32m[K                                                                                                                                                                                                                             ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:357:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos_sub[m[K’ was not declared in this scope
+  pos_sub         = nh.subscribe("/haptic_drone/odometry_sensor1/pose", 10, &orientationCallback);
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:366:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ was not declared in this scope
+  cout << "\r\n\n\n\033[32m\033[1mCLICK TO START \033[0m" << endl; 
+[01;32m[K  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:366:2:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22:0[m[K:
+[01m[K/usr/include/c++/5/iostream:61:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::cout[m[K’
+   extern ostream cout;  /// Linked to standard output
+[01;32m[K                  ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:366:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+  cout << "\r\n\n\n\033[32m\033[1mCLICK TO START \033[0m" << endl; 
+[01;32m[K                                                             ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:366:61:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/5/iostream:39:0[m[K,
+                 from [01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:22[m[K:
+[01m[K/usr/include/c++/5/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+[01;32m[K     ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:393:4:[m[K [01;31m[Kerror: [m[K‘[01m[KlogFile[m[K’ was not declared in this scope
+    logFile.open("/home/emanuele/ethz_ws/haptic_drone_log_file_RPYT.txt", std::ofstream::app);
+[01;32m[K    ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:398:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kpushing_effort[m[K’ was not declared in this scope
+     << pushing_effort          << ", "
+[01;32m[K        ^[m[K
+[01m[K/home/emanuele/ethz_ws/src/rotors_simulator/rotors_control/src/nodes/high_level_roll_thrust_controller.cpp:410:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos[m[K’ was not declared in this scope
+    if(pos[2] >= LIMIT_HEIGHT)
+[01;32m[K       ^[m[K
+make[2]: *** [CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.o] Errore 1
+make[1]: *** [CMakeFiles/high_level_roll_thrust_controller.dir/all] Errore 2
+make[1]: *** Attesa per i processi non terminati....
+make: *** [all] Errore 2

@@ -276,6 +276,7 @@ void ControlStrategy(double effort, double roll_d)
 	pos_pub.publish(pos_msg);
 }
 
+// State Machine handler
 void StateMachine()
 {
 	cout << "\r\n\n\033[32m\033[1m--------------------------------------------------------------\033[0m" << endl;
