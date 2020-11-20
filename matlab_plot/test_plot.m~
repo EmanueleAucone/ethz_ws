@@ -35,7 +35,7 @@ end
 hp = array2table(data,...
     'VariableNames',{'y_c' 'z_c' 'y_d' 'z_d' 'roll_d' 'roll_d_comm' 'effort' 't_x' 'f_y' 'f_z' 'theta' 'f_f' 'f_n' 'mu'});
 
-initial = 12000;
+initial = 120;
 final = size(data,1);
 
 figure;

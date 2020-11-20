@@ -49,10 +49,8 @@ const int PUB_TIME = 1;				  	// New waypoint is published every 'PUB_TIME' seco
 Eigen::Vector3f raw_forces;
 Eigen::Vector3f raw_torques;
 double force_magnitude;
-//const double MIN_LATERAL_FORCE_THRESHOLD  = 0.001; 	// [N]
 const double MIN_LATERAL_FORCE_THRESHOLD  = 0.002; 	// [N]
 const double MAX_LATERAL_FORCE_THRESHOLD  = 0.2;   	// [N]
-// const double MAX_VERTICAL_FORCE_THRESHOLD = 2;  	// [N]
 const double MAX_VERTICAL_FORCE_THRESHOLD = 1;  	// [N]
 const double CAGE_WEIGHT_OFFSET           = 0.147;  	// [N]
 const double CAGE_RADIUS                  = 0.255;  	// [m]
@@ -77,14 +75,12 @@ bool first_flag     = true;
 geometry_msgs::PoseStamped pos_msg;
 double desired_roll, commanded_roll;
 double pushing_effort       = 1;
-// const double DELTA_PUSH	    = 0.10;
 const double DELTA_PUSH	    = 0.1;
 const double MAX_EFFORT     = 10;
 const double LIMIT_HEIGHT   = 3.9;		 	// Max height waypoint [m]
-//const double CONTROL_GAIN_Y = 2; 	 	 	// Controller Gain for Y component
 const double CONTROL_GAIN_Y = 1; 	 	 	// Controller Gain for Y component
 const double CONTROL_GAIN_Z = 0.1;		 	// Controller Gain for Z component
-//const double MAX_ROLL       = 0.08727;		// Max desired roll angle [rad], equal to 5 deg
+const double MIN_ROLL       = 0.08727;			// Min desired roll angle [rad], equal to 5 deg
 const double MAX_ROLL       = 0.261799;		 	// Max desired roll angle [rad], equal to 15 deg
 bool sliding_flag           = false;
 
@@ -244,7 +240,7 @@ void ComputeObstacleInformation()
 	cout << "FRICTION COEFFICIENT: " << mu << endl;
 }
 
-// New waypoint computed with respect to the circle formulation
+// New waypoint computed with respect to the ellipsoid formulation (upper waypoint in case of sliding)
 void ControlStrategy(double effort, double roll_d)
 {
 	cout << "-------" << endl;
@@ -255,25 +251,65 @@ void ControlStrategy(double effort, double roll_d)
 	else if(roll_d < -MAX_ROLL)
 		roll_d = -MAX_ROLL;
 
-	commanded_roll = roll_d;
-
-	cout << "COMMANDED ANGLE: " << (180/M_PI)*commanded_roll << " [deg], " 
-                                    <<            commanded_roll << " [rad]" 
-				    << endl;
-
 	// Staturation of the pushing effort
-	if(pushing_effort >= MAX_EFFORT)
-		pushing_effort = MAX_EFFORT;
+	if(effort >= MAX_EFFORT)
+		effort = MAX_EFFORT;
 
-	cout << "EFFORT: " << pushing_effort << endl;
-
+	// Compose controller message
 	pos_msg.header.stamp = ros::Time::now();
 	// X position is always fixed (because the drone is constraint to the structure)
 	pos_msg.pose.position.x = pos[0];
 	// Change Y,Z coordinate depending on the current state of the system
-	pos_msg.pose.position.y = pos[1] - (effort * CONTROL_GAIN_Y * sin(commanded_roll));
-	pos_msg.pose.position.z = pos[2] + (effort * CONTROL_GAIN_Z * cos(commanded_roll));
+	pos_msg.pose.position.y = pos[1] - (effort * CONTROL_GAIN_Y * sin(roll_d));
+	pos_msg.pose.position.z = pos[2] + (effort * CONTROL_GAIN_Z * cos(roll_d));
 	pos_pub.publish(pos_msg);
+
+	// Update control parameters
+	commanded_roll = roll_d;
+	pushing_effort = effort;
+
+	cout << "COMMANDED ANGLE: " << (180/M_PI)*commanded_roll << " [deg], " 
+                                    <<            commanded_roll << " [rad]" 
+				                                 << endl;
+
+	cout << "EFFORT: "          << effort                    << endl;
+
+}
+
+// New waypoint computed as the lower waypoint for horizontal translation
+void AlternativeControlStrategy(double effort, double roll_d)
+{
+	cout << "-------" << endl;
+
+	// Staturation of the pushing effort
+	if(effort >= MAX_EFFORT)
+		effort = MAX_EFFORT;
+
+	// Compose controller message
+	pos_msg.header.stamp = ros::Time::now();
+	// X position is always fixed (because the drone is constraint to the structure)
+	pos_msg.pose.position.x = pos[0];
+	// Change Y,Z coordinate depending on the current state of the system
+	if(roll_d > 0)
+		pos_msg.pose.position.y = pos[1] - (effort * CONTROL_GAIN_Y * cos(roll_d));
+	else	
+		pos_msg.pose.position.y = pos[1] + (effort * CONTROL_GAIN_Y * cos(roll_d));
+	pos_msg.pose.position.z = pos[2] + (effort * CONTROL_GAIN_Z * sin(fabs(roll_d)));
+	pos_pub.publish(pos_msg);
+
+	// Update control parameters
+	commanded_roll = roll_d;
+	pushing_effort = effort;
+
+	// Update control parameters
+	commanded_roll = roll_d;
+	pushing_effort = effort;
+
+	cout << "COMMANDED ANGLE: " << (180/M_PI)*commanded_roll << " [deg], " 
+                                    <<            commanded_roll << " [rad]" 
+				                                 << endl;
+
+	cout << "EFFORT: "          << effort                    << endl;
 }
 
 // State Machine handler
@@ -305,16 +341,16 @@ void StateMachine()
 		ControlStrategy(pushing_effort, 0);
 	}
 	// Contact detected: push until a threshold in the lateral or vertical force is overcome
-	else if(((fabs(ft_filtered_msg.force.y) > MIN_LATERAL_FORCE_THRESHOLD && fabs(ft_filtered_msg.force.y) < MAX_LATERAL_FORCE_THRESHOLD) && fabs(ft_filtered_msg.force.z) < MAX_VERTICAL_FORCE_THRESHOLD) && !sliding_flag && pushing_effort < MAX_EFFORT)
+	else if(((fabs(ft_filtered_msg.force.y) > MIN_LATERAL_FORCE_THRESHOLD && fabs(ft_filtered_msg.force.y) < MAX_LATERAL_FORCE_THRESHOLD) && fabs(ft_filtered_msg.force.z) < MAX_VERTICAL_FORCE_THRESHOLD) && !sliding_flag)
 	{
 		cout << "\033[32m\033[0mCONTACT DETECTED: PUSH MODE! \033[0m" << endl;
 		
+		// Reset variable
+		sliding_flag = false;
+
 		// Increase the height reference to push against the detected obstacle 
 		pushing_effort += DELTA_PUSH;
 		ControlStrategy(pushing_effort, 0);
-
-		// Reset variables
-		sliding_flag = false;
 	}
 	// Threshold overcome: obstacle not traversable
 	else if(fabs(ft_filtered_msg.force.y) > MAX_LATERAL_FORCE_THRESHOLD || fabs(ft_filtered_msg.force.z) > MAX_VERTICAL_FORCE_THRESHOLD || pushing_effort == MAX_EFFORT)
@@ -325,13 +361,23 @@ void StateMachine()
 		if(!sliding_flag)
 			ComputeDesiredRoll();
 
-		// Adaptive adjustment of the desired sliding heading angle		
-		//ControlStrategy(pushing_effort, desired_roll/mu);
-		int sign = (ft_filtered_msg.torque.x > 0) ? -1 : 1;
-		ControlStrategy(pushing_effort, sign*desired_roll*fabs(ft_filtered_msg.force.z)/MAX_VERTICAL_FORCE_THRESHOLD);
-				
-		// Update variables
+		// Update variable
 		sliding_flag = true;
+
+		int sign = (ft_filtered_msg.torque.x > 0) ? -1 : 1;
+		if(fabs(desired_roll) > MIN_ROLL)
+		{
+			// Pure sliding: adaptive adjustment of the desired sliding heading angle		
+			ControlStrategy(pushing_effort, sign*desired_roll*fabs(ft_filtered_msg.force.z)/MAX_VERTICAL_FORCE_THRESHOLD);
+		}
+		else
+		{
+			// Horizontal translation
+			AlternativeControlStrategy(pushing_effort, sign*desired_roll);
+			// Reset variables	
+			pushing_effort = 1;	
+			sliding_flag   = false;
+		}
 	}
 	// Fault and failure handling
 	else
@@ -345,15 +391,6 @@ void StateMachine()
 			pushing_effort += DELTA_PUSH;
 			ControlStrategy(pushing_effort, commanded_roll);
 		}
-
-		/*cout << "\033[32m\033[0mWELL DONE BOY! \033[0m" << endl;
-
-		// Reset variables	
-		pushing_effort = 1;	
-		sliding_flag   = false;
-		commanded_roll =  0;
-		sleep(1);
-		*/
 	}		
 	
 	// Print current position and commanded waypoint
@@ -404,7 +441,7 @@ int main(int argc, char** argv)
 		if(!stop)
 		{
 			// Check the status and control the drone every PUB_TIME seconds
-			 if((ros::Time::now().toSec() - starting_time) > PUB_TIME) 
+			if((ros::Time::now().toSec() - starting_time) > PUB_TIME) 
 			{
 				// State Machine running!
 				StateMachine();
