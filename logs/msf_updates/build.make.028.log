@@ -1,8 +1,0 @@
-[ 26%] Built target msf_updates_gencfg
-[ 36%] Built target pose_distorter
-[ 47%] Built target spherical_position_sensor
-[ 57%] Built target test_distort
-[ 68%] Built target position_sensor
-[ 78%] Built target pose_sensor
-[ 89%] Built target pose_pressure_sensor
-[100%] Built target position_pose_sensor

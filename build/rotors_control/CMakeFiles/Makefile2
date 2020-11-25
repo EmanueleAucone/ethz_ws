@@ -60,164 +60,83 @@ CMAKE_SOURCE_DIR = /home/emanuele/ethz_ws/src/rotors_simulator/rotors_control
 CMAKE_BINARY_DIR = /home/emanuele/ethz_ws/build/rotors_control
 
 #=============================================================================
-# Target rules for target CMakeFiles/high_level_roll_thrust_controller.dir
+# Target rules for target CMakeFiles/high_level_2D_position_controller.dir
 
 # All Build rule for target.
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/depend
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/emanuele/ethz_ws/build/rotors_control/CMakeFiles --progress-num=14,15 "Built target high_level_roll_thrust_controller"
-.PHONY : CMakeFiles/high_level_roll_thrust_controller.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_position_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/depend
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/emanuele/ethz_ws/build/rotors_control/CMakeFiles --progress-num=12,13 "Built target high_level_2D_position_controller"
+.PHONY : CMakeFiles/high_level_2D_position_controller.dir/all
 
 # Include target in all.
-all: CMakeFiles/high_level_roll_thrust_controller.dir/all
+all: CMakeFiles/high_level_2D_position_controller.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/high_level_roll_thrust_controller.dir/rule: cmake_check_build_system
+CMakeFiles/high_level_2D_position_controller.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/high_level_roll_thrust_controller.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/high_level_2D_position_controller.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 0
-.PHONY : CMakeFiles/high_level_roll_thrust_controller.dir/rule
+.PHONY : CMakeFiles/high_level_2D_position_controller.dir/rule
 
 # Convenience name for target.
-high_level_roll_thrust_controller: CMakeFiles/high_level_roll_thrust_controller.dir/rule
+high_level_2D_position_controller: CMakeFiles/high_level_2D_position_controller.dir/rule
 
-.PHONY : high_level_roll_thrust_controller
-
-# clean rule for target.
-CMakeFiles/high_level_roll_thrust_controller.dir/clean:
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/clean
-.PHONY : CMakeFiles/high_level_roll_thrust_controller.dir/clean
+.PHONY : high_level_2D_position_controller
 
 # clean rule for target.
-clean: CMakeFiles/high_level_roll_thrust_controller.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/high_level_controller.dir
-
-# All Build rule for target.
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/high_level_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/depend
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/emanuele/ethz_ws/build/rotors_control/CMakeFiles --progress-num=12,13 "Built target high_level_controller"
-.PHONY : CMakeFiles/high_level_controller.dir/all
-
-# Include target in all.
-all: CMakeFiles/high_level_controller.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/high_level_controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/high_level_controller.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 0
-.PHONY : CMakeFiles/high_level_controller.dir/rule
-
-# Convenience name for target.
-high_level_controller: CMakeFiles/high_level_controller.dir/rule
-
-.PHONY : high_level_controller
+CMakeFiles/high_level_2D_position_controller.dir/clean:
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/clean
+.PHONY : CMakeFiles/high_level_2D_position_controller.dir/clean
 
 # clean rule for target.
-CMakeFiles/high_level_controller.dir/clean:
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/clean
-.PHONY : CMakeFiles/high_level_controller.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/high_level_controller.dir/clean
+clean: CMakeFiles/high_level_2D_position_controller.dir/clean
 
 .PHONY : clean
 
@@ -2016,6 +1935,87 @@ CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/high_level_2D_roll_thrust_controller.dir
+
+# All Build rule for target.
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/nav_msgs_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/mav_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/depend
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/emanuele/ethz_ws/build/rotors_control/CMakeFiles --progress-num=14,15 "Built target high_level_2D_roll_thrust_controller"
+.PHONY : CMakeFiles/high_level_2D_roll_thrust_controller.dir/all
+
+# Include target in all.
+all: CMakeFiles/high_level_2D_roll_thrust_controller.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/high_level_2D_roll_thrust_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/emanuele/ethz_ws/build/rotors_control/CMakeFiles 0
+.PHONY : CMakeFiles/high_level_2D_roll_thrust_controller.dir/rule
+
+# Convenience name for target.
+high_level_2D_roll_thrust_controller: CMakeFiles/high_level_2D_roll_thrust_controller.dir/rule
+
+.PHONY : high_level_2D_roll_thrust_controller
+
+# clean rule for target.
+CMakeFiles/high_level_2D_roll_thrust_controller.dir/clean:
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/clean
+.PHONY : CMakeFiles/high_level_2D_roll_thrust_controller.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/high_level_2D_roll_thrust_controller.dir/clean
 
 .PHONY : clean
 

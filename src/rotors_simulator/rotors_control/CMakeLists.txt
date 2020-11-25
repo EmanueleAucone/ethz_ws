@@ -52,19 +52,19 @@ add_dependencies(roll_pitch_yawrate_thrust_controller_node ${catkin_EXPORTED_TAR
 target_link_libraries(roll_pitch_yawrate_thrust_controller_node
   roll_pitch_yawrate_thrust_controller ${catkin_LIBRARIES})
 
-add_executable(high_level_controller src/nodes/high_level_controller.cpp)
-target_link_libraries(high_level_controller ${catkin_LIBRARIES})
-add_dependencies(high_level_controller ${catkin_EXPORTED_TARGETS})
+add_executable(high_level_2D_position_controller src/nodes/high_level_2D_position_controller.cpp)
+target_link_libraries(high_level_2D_position_controller ${catkin_LIBRARIES})
+add_dependencies(high_level_2D_position_controller ${catkin_EXPORTED_TARGETS})
 
-add_executable(high_level_roll_thrust_controller src/nodes/high_level_roll_thrust_controller.cpp)
-target_link_libraries(high_level_roll_thrust_controller ${catkin_LIBRARIES})
-add_dependencies(high_level_roll_thrust_controller ${catkin_EXPORTED_TARGETS})
+add_executable(high_level_2D_roll_thrust_controller src/nodes/high_level_2D_roll_thrust_controller.cpp)
+target_link_libraries(high_level_2D_roll_thrust_controller ${catkin_LIBRARIES})
+add_dependencies(high_level_2D_roll_thrust_controller ${catkin_EXPORTED_TARGETS})
 
 install(TARGETS lee_position_controller roll_pitch_yawrate_thrust_controller
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )
 
-install(TARGETS lee_position_controller_node roll_pitch_yawrate_thrust_controller_node high_level_controller high_level_roll_thrust_controller
+install(TARGETS lee_position_controller_node roll_pitch_yawrate_thrust_controller_node high_level_2D_position_controller high_level_2D_roll_thrust_controller
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

@@ -1,0 +1,11 @@
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/liblee_position_controller.so, /home/emanuele/ethz_ws/devel/lib/liblee_position_controller.so)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/libroll_pitch_yawrate_thrust_controller.so, /home/emanuele/ethz_ws/devel/lib/libroll_pitch_yawrate_thrust_controller.so)
+Symlinking /home/emanuele/ethz_ws/devel/lib/rotors_control/high_level_2D_roll_thrust_controller
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/rotors_control/high_level_controller, /home/emanuele/ethz_ws/devel/lib/rotors_control/high_level_controller)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/rotors_control/lee_position_controller_node, /home/emanuele/ethz_ws/devel/lib/rotors_control/lee_position_controller_node)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/rotors_control/roll_pitch_yawrate_thrust_controller_node, /home/emanuele/ethz_ws/devel/lib/rotors_control/roll_pitch_yawrate_thrust_controller_node)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/rotors_control/high_level_roll_thrust_controller, /home/emanuele/ethz_ws/devel/lib/rotors_control/high_level_roll_thrust_controller)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/rotors_control/high_level_2D_position_controller, /home/emanuele/ethz_ws/devel/lib/rotors_control/high_level_2D_position_controller)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/lib/pkgconfig/rotors_control.pc, /home/emanuele/ethz_ws/devel/lib/pkgconfig/rotors_control.pc)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/share/rotors_control/cmake/rotors_controlConfig.cmake, /home/emanuele/ethz_ws/devel/share/rotors_control/cmake/rotors_controlConfig.cmake)
+Linked: (/home/emanuele/ethz_ws/devel/.private/rotors_control/share/rotors_control/cmake/rotors_controlConfig-version.cmake, /home/emanuele/ethz_ws/devel/share/rotors_control/cmake/rotors_controlConfig-version.cmake)

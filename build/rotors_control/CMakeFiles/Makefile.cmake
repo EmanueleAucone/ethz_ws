@@ -202,8 +202,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/high_level_roll_thrust_controller.dir/DependInfo.cmake"
-  "CMakeFiles/high_level_controller.dir/DependInfo.cmake"
+  "CMakeFiles/high_level_2D_position_controller.dir/DependInfo.cmake"
   "CMakeFiles/roll_pitch_yawrate_thrust_controller_node.dir/DependInfo.cmake"
   "CMakeFiles/roll_pitch_yawrate_thrust_controller.dir/DependInfo.cmake"
   "CMakeFiles/sensor_msgs_generate_messages_py.dir/DependInfo.cmake"
@@ -254,6 +253,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mav_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
+  "CMakeFiles/high_level_2D_roll_thrust_controller.dir/DependInfo.cmake"
   "CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake"
   "CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake"
   "CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/DependInfo.cmake"

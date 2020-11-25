@@ -166,30 +166,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named high_level_roll_thrust_controller
+# Target rules for targets named high_level_2D_position_controller
 
 # Build rule for target.
-high_level_roll_thrust_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 high_level_roll_thrust_controller
-.PHONY : high_level_roll_thrust_controller
+high_level_2D_position_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 high_level_2D_position_controller
+.PHONY : high_level_2D_position_controller
 
 # fast build rule for target.
-high_level_roll_thrust_controller/fast:
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/build
-.PHONY : high_level_roll_thrust_controller/fast
-
-#=============================================================================
-# Target rules for targets named high_level_controller
-
-# Build rule for target.
-high_level_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 high_level_controller
-.PHONY : high_level_controller
-
-# fast build rule for target.
-high_level_controller/fast:
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/build
-.PHONY : high_level_controller/fast
+high_level_2D_position_controller/fast:
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/build
+.PHONY : high_level_2D_position_controller/fast
 
 #=============================================================================
 # Target rules for targets named roll_pitch_yawrate_thrust_controller_node
@@ -842,6 +829,19 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named high_level_2D_roll_thrust_controller
+
+# Build rule for target.
+high_level_2D_roll_thrust_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 high_level_2D_roll_thrust_controller
+.PHONY : high_level_2D_roll_thrust_controller
+
+# fast build rule for target.
+high_level_2D_roll_thrust_controller/fast:
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/build
+.PHONY : high_level_2D_roll_thrust_controller/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
 
 # Build rule for target.
@@ -999,59 +999,59 @@ src/library/roll_pitch_yawrate_thrust_controller.cpp.s:
 	$(MAKE) -f CMakeFiles/roll_pitch_yawrate_thrust_controller.dir/build.make CMakeFiles/roll_pitch_yawrate_thrust_controller.dir/src/library/roll_pitch_yawrate_thrust_controller.cpp.s
 .PHONY : src/library/roll_pitch_yawrate_thrust_controller.cpp.s
 
-src/nodes/high_level_controller.o: src/nodes/high_level_controller.cpp.o
+src/nodes/high_level_2D_position_controller.o: src/nodes/high_level_2D_position_controller.cpp.o
 
-.PHONY : src/nodes/high_level_controller.o
-
-# target to build an object file
-src/nodes/high_level_controller.cpp.o:
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.o
-.PHONY : src/nodes/high_level_controller.cpp.o
-
-src/nodes/high_level_controller.i: src/nodes/high_level_controller.cpp.i
-
-.PHONY : src/nodes/high_level_controller.i
-
-# target to preprocess a source file
-src/nodes/high_level_controller.cpp.i:
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.i
-.PHONY : src/nodes/high_level_controller.cpp.i
-
-src/nodes/high_level_controller.s: src/nodes/high_level_controller.cpp.s
-
-.PHONY : src/nodes/high_level_controller.s
-
-# target to generate assembly for a file
-src/nodes/high_level_controller.cpp.s:
-	$(MAKE) -f CMakeFiles/high_level_controller.dir/build.make CMakeFiles/high_level_controller.dir/src/nodes/high_level_controller.cpp.s
-.PHONY : src/nodes/high_level_controller.cpp.s
-
-src/nodes/high_level_roll_thrust_controller.o: src/nodes/high_level_roll_thrust_controller.cpp.o
-
-.PHONY : src/nodes/high_level_roll_thrust_controller.o
+.PHONY : src/nodes/high_level_2D_position_controller.o
 
 # target to build an object file
-src/nodes/high_level_roll_thrust_controller.cpp.o:
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.o
-.PHONY : src/nodes/high_level_roll_thrust_controller.cpp.o
+src/nodes/high_level_2D_position_controller.cpp.o:
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/src/nodes/high_level_2D_position_controller.cpp.o
+.PHONY : src/nodes/high_level_2D_position_controller.cpp.o
 
-src/nodes/high_level_roll_thrust_controller.i: src/nodes/high_level_roll_thrust_controller.cpp.i
+src/nodes/high_level_2D_position_controller.i: src/nodes/high_level_2D_position_controller.cpp.i
 
-.PHONY : src/nodes/high_level_roll_thrust_controller.i
+.PHONY : src/nodes/high_level_2D_position_controller.i
 
 # target to preprocess a source file
-src/nodes/high_level_roll_thrust_controller.cpp.i:
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.i
-.PHONY : src/nodes/high_level_roll_thrust_controller.cpp.i
+src/nodes/high_level_2D_position_controller.cpp.i:
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/src/nodes/high_level_2D_position_controller.cpp.i
+.PHONY : src/nodes/high_level_2D_position_controller.cpp.i
 
-src/nodes/high_level_roll_thrust_controller.s: src/nodes/high_level_roll_thrust_controller.cpp.s
+src/nodes/high_level_2D_position_controller.s: src/nodes/high_level_2D_position_controller.cpp.s
 
-.PHONY : src/nodes/high_level_roll_thrust_controller.s
+.PHONY : src/nodes/high_level_2D_position_controller.s
 
 # target to generate assembly for a file
-src/nodes/high_level_roll_thrust_controller.cpp.s:
-	$(MAKE) -f CMakeFiles/high_level_roll_thrust_controller.dir/build.make CMakeFiles/high_level_roll_thrust_controller.dir/src/nodes/high_level_roll_thrust_controller.cpp.s
-.PHONY : src/nodes/high_level_roll_thrust_controller.cpp.s
+src/nodes/high_level_2D_position_controller.cpp.s:
+	$(MAKE) -f CMakeFiles/high_level_2D_position_controller.dir/build.make CMakeFiles/high_level_2D_position_controller.dir/src/nodes/high_level_2D_position_controller.cpp.s
+.PHONY : src/nodes/high_level_2D_position_controller.cpp.s
+
+src/nodes/high_level_2D_roll_thrust_controller.o: src/nodes/high_level_2D_roll_thrust_controller.cpp.o
+
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.o
+
+# target to build an object file
+src/nodes/high_level_2D_roll_thrust_controller.cpp.o:
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/src/nodes/high_level_2D_roll_thrust_controller.cpp.o
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.cpp.o
+
+src/nodes/high_level_2D_roll_thrust_controller.i: src/nodes/high_level_2D_roll_thrust_controller.cpp.i
+
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.i
+
+# target to preprocess a source file
+src/nodes/high_level_2D_roll_thrust_controller.cpp.i:
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/src/nodes/high_level_2D_roll_thrust_controller.cpp.i
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.cpp.i
+
+src/nodes/high_level_2D_roll_thrust_controller.s: src/nodes/high_level_2D_roll_thrust_controller.cpp.s
+
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.s
+
+# target to generate assembly for a file
+src/nodes/high_level_2D_roll_thrust_controller.cpp.s:
+	$(MAKE) -f CMakeFiles/high_level_2D_roll_thrust_controller.dir/build.make CMakeFiles/high_level_2D_roll_thrust_controller.dir/src/nodes/high_level_2D_roll_thrust_controller.cpp.s
+.PHONY : src/nodes/high_level_2D_roll_thrust_controller.cpp.s
 
 src/nodes/lee_position_controller_node.o: src/nodes/lee_position_controller_node.cpp.o
 
@@ -1115,8 +1115,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... high_level_roll_thrust_controller"
-	@echo "... high_level_controller"
+	@echo "... high_level_2D_position_controller"
 	@echo "... roll_pitch_yawrate_thrust_controller_node"
 	@echo "... roll_pitch_yawrate_thrust_controller"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -1172,6 +1171,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... list_install_components"
+	@echo "... high_level_2D_roll_thrust_controller"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
@@ -1186,12 +1186,12 @@ help:
 	@echo "... src/library/roll_pitch_yawrate_thrust_controller.o"
 	@echo "... src/library/roll_pitch_yawrate_thrust_controller.i"
 	@echo "... src/library/roll_pitch_yawrate_thrust_controller.s"
-	@echo "... src/nodes/high_level_controller.o"
-	@echo "... src/nodes/high_level_controller.i"
-	@echo "... src/nodes/high_level_controller.s"
-	@echo "... src/nodes/high_level_roll_thrust_controller.o"
-	@echo "... src/nodes/high_level_roll_thrust_controller.i"
-	@echo "... src/nodes/high_level_roll_thrust_controller.s"
+	@echo "... src/nodes/high_level_2D_position_controller.o"
+	@echo "... src/nodes/high_level_2D_position_controller.i"
+	@echo "... src/nodes/high_level_2D_position_controller.s"
+	@echo "... src/nodes/high_level_2D_roll_thrust_controller.o"
+	@echo "... src/nodes/high_level_2D_roll_thrust_controller.i"
+	@echo "... src/nodes/high_level_2D_roll_thrust_controller.s"
 	@echo "... src/nodes/lee_position_controller_node.o"
 	@echo "... src/nodes/lee_position_controller_node.i"
 	@echo "... src/nodes/lee_position_controller_node.s"

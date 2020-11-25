@@ -1,0 +1,1 @@
+/home/emanuele/ethz_ws/devel/.private/planar_structure/lib/pkgconfig/planar_structure.pc
